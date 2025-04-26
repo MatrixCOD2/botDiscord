@@ -6,7 +6,7 @@ const {
   
   const client = new Client({ intents: [GatewayIntentBits.Guilds] });
   
-  // ⚠️ Reemplazá estos datos:
+
   const TOKEN = process.env.TOKEN;
   const CLIENT_ID = process.env.CLIENT_ID;  
   const CANAL_LISTA_BLANCA = 'lista-blanca📄';
@@ -35,10 +35,10 @@ const {
   });
   
   client.on(Events.InteractionCreate, async interaction => {
-    // Slash command
+
     if (interaction.isChatInputCommand() && interaction.commandName === 'lista') {
       const modal = new ModalBuilder()
-        .setCustomId('formulario') // ← corregido el typo
+        .setCustomId('formulario') 
         .setTitle('Formulario');
   
       const nickInput = new TextInputBuilder()
